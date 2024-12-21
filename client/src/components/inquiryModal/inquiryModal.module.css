@@ -1,0 +1,97 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.formContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #003ea3, #0047d4, #00a36c, #0050ff);
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+
+.inpLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 18px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.formInp {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.submit {
+  align-self: flex-start;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--blue);
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    width: 100%;
+  }
+}

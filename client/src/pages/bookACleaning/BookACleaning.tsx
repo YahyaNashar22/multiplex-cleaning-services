@@ -1,13 +1,14 @@
+import { useState } from "react";
+
 import styles from "./bookACleaning.module.css";
 
 import logo from "../../assets/logo.png";
-import { useState } from "react";
 import { packageType } from "../../utils/servicePackages";
 import PackageSelector from "../../components/packageSelector/PackageSelector";
 import CleanersCounter from "../../components/cleanersCounter/CleanersCounter";
 
 const BookACleaning = () => {
-  const [selectedService, setSelectedService] = useState<packageType | null>(
+  const [selectedPackage, setSelectedPackage] = useState<packageType | null>(
     null
   );
 
@@ -21,7 +22,10 @@ const BookACleaning = () => {
 
       <h2 className={styles.slogan}>Home & Office Cleaning</h2>
 
-      <PackageSelector />
+      <PackageSelector
+        selectedPackage={selectedPackage}
+        setSelectedPackage={setSelectedPackage}
+      />
 
       <CleanersCounter cleaners={cleaners} setCleaners={setCleaners} />
     </main>
