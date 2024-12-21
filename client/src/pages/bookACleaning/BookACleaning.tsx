@@ -23,7 +23,7 @@ const BookACleaning = () => {
 
       <PackageSelector />
 
-      <CleanersCounter />
+      <CleanersCounter cleaners={cleaners} setCleaners={setCleaners} />
     </main>
   );
 };
