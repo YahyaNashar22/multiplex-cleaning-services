@@ -1,12 +1,18 @@
 import { FC, useEffect } from "react";
 import styles from "./inquiryModal.module.css";
+import { packageType } from "../../utils/servicePackages";
 
 interface props {
   openModal: boolean;
   setOpenModal: (e: boolean) => void;
+  selectedPackage: packageType | null;
 }
 
-const InquiryModal: FC<props> = ({ openModal, setOpenModal }) => {
+const InquiryModal: FC<props> = ({
+  openModal,
+  setOpenModal,
+  selectedPackage,
+}) => {
   const closeModal = () => {
     setOpenModal(false);
   };
@@ -35,7 +41,11 @@ const InquiryModal: FC<props> = ({ openModal, setOpenModal }) => {
         <div className={styles.formContent}>
           <label className={styles.inpLabel}>
             Package:
-            <input className={styles.formInp} placeholder="package" />
+            <input
+              className={styles.formInp}
+              placeholder="package"
+              value={selectedPackage?.name}
+            />
           </label>
 
           <label className={styles.inpLabel}>

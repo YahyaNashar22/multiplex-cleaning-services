@@ -55,7 +55,6 @@ export const packages: packageType[] = [
       "Wall Deep Cleaning",
     ],
     requestedServices: [],
-    frequencyOfService: frequencyOfServiceOptions.Once,
   },
   {
     name: "MOVE-IN/-OUT CLEANING",

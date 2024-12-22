@@ -54,7 +54,13 @@ const PackageSelector: FC<props> = ({
         })}
       </ul>
 
-      {openModal && <InquiryModal openModal={openModal} setOpenModal={setOpenModal} />}
+      {openModal && (
+        <InquiryModal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          selectedPackage={selectedPackage}
+        />
+      )}
     </div>
   );
 };

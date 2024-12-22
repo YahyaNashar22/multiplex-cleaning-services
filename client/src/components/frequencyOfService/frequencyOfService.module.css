@@ -12,60 +12,49 @@
   margin: 20px auto;
 }
 
-.servicesList {
+.frequencyList {
   list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  row-gap: 20px;
-  margin: auto;
-}
-
-.service {
-  font-size: 24px;
-  width: 100%;
-  word-wrap: break-word;
-  margin: auto;
-}
-
-.serviceLabel {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  line-height: 1.5;
-  cursor: pointer;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
   margin: auto 20px;
 }
 
-.serviceInp {
-  width: 20px;
-  height: 20px;
+.timeSlot {
+  font-size: 24px;
+  word-wrap: break-word;
+}
+
+.timeSlotLabel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.timeSlotInp {
+  width: 15px;
+  height: 15px;
   border-radius: 20%;
-  transform: scale(1.5);
+  transform: scale(1.4);
   appearance: none;
   outline: 1px solid var(--blue);
   position: relative;
   cursor: pointer;
 }
 
-.serviceInp:checked {
+.timeSlotInp:checked {
   background-color: var(--accent);
 }
 
-.serviceInp:checked::before {
+.timeSlotInp:checked::before {
   content: "✔";
   color: black;
-  font-size: 16px;
+  font-size: 12px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-
-@media (max-width: 660px) {
-.servicesList {
-  grid-template-columns: 1fr;
-}
 }

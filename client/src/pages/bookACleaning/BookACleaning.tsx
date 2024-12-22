@@ -7,6 +7,7 @@ import { packageType } from "../../utils/servicePackages";
 import PackageSelector from "../../components/packageSelector/PackageSelector";
 import CleanersCounter from "../../components/cleanersCounter/CleanersCounter";
 import PackageServices from "../../components/packageServices/PackageServices";
+import { FrequencyOfService } from "../../components/frequencyOfService/FrequencyOfService";
 
 const BookACleaning = () => {
   const [selectedPackage, setSelectedPackage] = useState<packageType | null>(
@@ -30,7 +31,20 @@ const BookACleaning = () => {
 
       <CleanersCounter cleaners={cleaners} setCleaners={setCleaners} />
 
-      <PackageServices selectedPackage={selectedPackage} />
+      {selectedPackage &&
+        selectedPackage?.pricePerCleaner !== "Request for Quotation" && (
+          <>
+            <PackageServices selectedPackage={selectedPackage} />
+          </>
+        )}
+
+      {selectedPackage &&
+        selectedPackage?.pricePerCleaner !== "Request for Quotation" &&
+        selectedPackage?.name === "REGULAR BASIC CLEANING" && (
+          <>
+            <FrequencyOfService selectedPackage={selectedPackage} />
+          </>
+        )}
     </main>
   );
 };
