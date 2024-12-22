@@ -11,6 +11,9 @@ const InquiryModal: FC<props> = ({ openModal, setOpenModal }) => {
     setOpenModal(false);
   };
 
+  // TODO: Add onSubmit logic
+  const onSubmit = () => {};
+
   useEffect(() => {
     // Disable scrolling when the modal is open
     if (openModal) document.body.style.overflow = "hidden";
@@ -22,7 +25,7 @@ const InquiryModal: FC<props> = ({ openModal, setOpenModal }) => {
   }, []);
   return (
     <div className={styles.wrapper}>
-      <form className={styles.formContainer} method="POST" onSubmit={() => {}}>
+      <form className={styles.formContainer} method="POST" onSubmit={onSubmit}>
         <div className={styles.formHeader}>
           <h1 className={styles.title}>Inquiry</h1>
           <p className={styles.close} onClick={closeModal}>

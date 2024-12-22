@@ -6,6 +6,7 @@ import logo from "../../assets/logo.png";
 import { packageType } from "../../utils/servicePackages";
 import PackageSelector from "../../components/packageSelector/PackageSelector";
 import CleanersCounter from "../../components/cleanersCounter/CleanersCounter";
+import PackageServices from "../../components/packageServices/PackageServices";
 
 const BookACleaning = () => {
   const [selectedPackage, setSelectedPackage] = useState<packageType | null>(
@@ -28,6 +29,8 @@ const BookACleaning = () => {
       />
 
       <CleanersCounter cleaners={cleaners} setCleaners={setCleaners} />
+
+      <PackageServices selectedPackage={selectedPackage} />
     </main>
   );
 };
